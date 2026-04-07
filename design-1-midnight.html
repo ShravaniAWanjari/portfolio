@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shravani Wanjari — Portfolio</title>
+    <meta name="description" content="Portfolio of Shravani Wanjari — Designer & Developer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(167, 107, 255, 0.4) transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a12;
+            color: #e8e0f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== GRAINY TEXTURE OVERLAY ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.35;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* ===== GRADIENT BACKGROUND BLOBS ===== */
+        .bg-gradient {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-gradient .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+        }
+
+        .blob-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(139, 50, 220, 0.5) 0%, transparent 70%);
+            top: -10%; left: -10%;
+        }
+
+        .blob-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(220, 50, 130, 0.4) 0%, transparent 70%);
+            top: 30%; right: -5%;
+        }
+
+        .blob-3 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(50, 50, 180, 0.35) 0%, transparent 70%);
+            bottom: -15%; left: 20%;
+        }
+
+        .blob-4 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(200, 80, 180, 0.3) 0%, transparent 70%);
+            top: 60%; left: -5%;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(232, 224, 240, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c084fc;
+        }
+
+        /* ===== BENTO GRID ===== */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 16px;
+        }
+
+        .bento-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
+            pointer-events: none;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(192, 132, 252, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(139, 50, 220, 0.15);
+        }
+
+        /* Card sizing */
+        .card-hero {
+            grid-column: span 2;
+            grid-row: span 2;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(139, 50, 220, 0.15), rgba(220, 50, 130, 0.1));
+        }
+
+        .card-profile {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .card-wide {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .card-tall {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .card-small {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .card-full {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+
+        /* ===== CARD CONTENT ===== */
+        .card-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(192, 132, 252, 0.7);
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-hero .card-title {
+            font-size: 2.8rem;
+            line-height: 1.05;
+        }
+
+        .card-desc {
+            font-size: 0.875rem;
+            color: rgba(232, 224, 240, 0.5);
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero specific */
+        .hero-greeting {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(192, 132, 252, 0.8);
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, #e8e0f0 0%, #c084fc 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-role {
+            font-size: 1.1rem;
+            color: rgba(232, 224, 240, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats card */
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(232, 224, 240, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-tag {
+            padding: 6px 14px;
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.15);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(192, 132, 252, 0.8);
+        }
+
+        /* Project card glow variants */
+        .card-glow-purple {
+            background: linear-gradient(145deg, rgba(139, 50, 220, 0.12), rgba(20, 15, 35, 0.6));
+        }
+
+        .card-glow-magenta {
+            background: linear-gradient(145deg, rgba(220, 50, 130, 0.12), rgba(20, 15, 35, 0.6));
+        }
+
+        .card-glow-blue {
+            background: linear-gradient(145deg, rgba(50, 80, 220, 0.12), rgba(20, 15, 35, 0.6));
+        }
+
+        .card-glow-teal {
+            background: linear-gradient(145deg, rgba(50, 200, 180, 0.1), rgba(20, 15, 35, 0.6));
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+            margin-top: 16px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.15);
+            border-radius: 12px;
+            color: rgba(192, 132, 252, 0.9);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(192, 132, 252, 0.2);
+            border-color: rgba(192, 132, 252, 0.3);
+        }
+
+        /* Status dot */
+        .status-dot {
+            width: 8px; height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            color: rgba(74, 222, 128, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Project icon placeholder */
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon-purple { background: rgba(139, 50, 220, 0.2); }
+        .icon-magenta { background: rgba(220, 50, 130, 0.2); }
+        .icon-blue { background: rgba(50, 80, 220, 0.2); }
+        .icon-teal { background: rgba(50, 200, 180, 0.2); }
+
+        /* Tech stack mini */
+        .tech-stack {
+            display: flex;
+            gap: 6px;
+            margin-top: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-dot {
+            width: 24px; height: 24px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Marquee */
+        .marquee-card {
+            overflow: hidden;
+            padding: 24px 0;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(192, 132, 252, 0.25);
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 48px 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: rgba(232, 224, 240, 0.25);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card-hero { grid-column: span 2; }
+            .card-full { grid-column: span 2; }
+            .hero-name { font-size: 2.5rem; }
+            .nav-links { gap: 16px; }
+        }
+
+        @media (max-width: 600px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-hero, .card-profile, .card-wide, .card-full {
+                grid-column: span 1;
+            }
+            .hero-name { font-size: 2rem; }
+            .card-hero .card-title { font-size: 2rem; }
+            .nav-links { display: none; }
+            .contact-links { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background gradients -->
+    <div class="bg-gradient">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <div class="container">
+        <!-- Nav -->
+        <nav>
+            <div class="logo">SW.</div>
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Bento Grid -->
+        <div class="bento-grid">
+            <!-- HERO -->
+            <div class="bento-card card-hero" id="about">
+                <div class="hero-greeting">👋 Hello, I'm</div>
+                <div class="hero-name">Shravani<br>Wanjari</div>
+                <div class="hero-role">Designer & Developer crafting digital experiences that feel alive.</div>
+            </div>
+
+            <!-- AVAILABILITY -->
+            <div class="bento-card card-small">
+                <div class="card-label">Status</div>
+                <div style="position:relative;z-index:2;">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Available for work</span>
+                </div>
+                <div class="card-desc" style="margin-top:12px;">Open to freelance and full-time opportunities.</div>
+            </div>
+
+            <!-- STAT -->
+            <div class="bento-card card-small">
+                <div class="card-label">Experience</div>
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years of Craft</div>
+            </div>
+
+            <!-- PROFILE DESC -->
+            <div class="bento-card card-wide">
+                <div class="card-label">About</div>
+                <div class="card-title">I build things for the web.</div>
+                <div class="card-desc">I'm passionate about clean design, performant code, and creating interfaces that delight users. Currently based in India, working across time zones.</div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="bento-card card-wide">
+                <div class="card-label">Skills & Tools</div>
+                <div class="card-title">My Toolkit</div>
+                <div class="skills-list" style="margin-top:12px;">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Tailwind</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+
+            <!-- MARQUEE -->
+            <div class="bento-card card-full marquee-card" style="justify-content:center;align-items:center;">
+                <div class="marquee-track">
+                    <span class="marquee-item">UI/UX DESIGN</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">WEB DEVELOPMENT</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">CREATIVE CODING</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">BRAND IDENTITY</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">MOTION DESIGN</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">UI/UX DESIGN</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">WEB DEVELOPMENT</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">CREATIVE CODING</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">BRAND IDENTITY</span>
+                    <span class="marquee-item">•</span>
+                    <span class="marquee-item">MOTION DESIGN</span>
+                    <span class="marquee-item">•</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 1 -->
+            <div class="bento-card card-wide card-glow-purple" id="work">
+                <div class="card-icon icon-purple">🎨</div>
+                <div class="card-label">Project</div>
+                <div class="card-title">Brand Identity System</div>
+                <div class="card-desc">Complete visual identity for a fintech startup — logo, typography, color system, and guidelines.</div>
+                <div class="tech-stack">
+                    <span class="skill-tag" style="padding:4px 10px;">Figma</span>
+                    <span class="skill-tag" style="padding:4px 10px;">Illustrator</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="bento-card card-tall card-glow-magenta">
+                <div class="card-icon icon-magenta">⚡</div>
+                <div class="card-label">Project</div>
+                <div class="card-title">Analytics Dashboard</div>
+                <div class="card-desc">Real-time data visualization platform with interactive charts, live feeds, and dark mode support.</div>
+                <div class="tech-stack">
+                    <span class="skill-tag" style="padding:4px 10px;">React</span>
+                    <span class="skill-tag" style="padding:4px 10px;">D3.js</span>
+                    <span class="skill-tag" style="padding:4px 10px;">Node</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="bento-card card-small card-glow-blue">
+                <div class="card-icon icon-blue">🔮</div>
+                <div class="card-label">Project</div>
+                <div class="card-title">AI Chatbot</div>
+                <div class="card-desc">Conversational AI with natural language processing.</div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="bento-card card-small card-glow-teal">
+                <div class="card-icon icon-teal">🛒</div>
+                <div class="card-label">Project</div>
+                <div class="card-title">E-Commerce</div>
+                <div class="card-desc">Full-stack marketplace with payments integration.</div>
+            </div>
+
+            <!-- STAT 2 -->
+            <div class="bento-card card-small">
+                <div class="card-label">Projects</div>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Delivered</div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="bento-card card-wide" id="contact">
+                <div class="card-label">Get in Touch</div>
+                <div class="card-title">Let's work together.</div>
+                <div class="card-desc">Have a project in mind? Let's create something extraordinary.</div>
+                <div class="contact-links">
+                    <a href="mailto:hello@shravani.dev" class="contact-link">✉️ Email</a>
+                    <a href="#" class="contact-link">🔗 LinkedIn</a>
+                    <a href="#" class="contact-link">🐙 GitHub</a>
+                    <a href="#" class="contact-link">🐦 Twitter</a>
+                </div>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="bento-card card-small">
+                <div class="card-label">Location</div>
+                <div class="card-title">🌏</div>
+                <div class="card-desc">India<br>IST (UTC +5:30)</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Shravani Wanjari. Crafted with care.</p>
+        </footer>
+    </div>
+</body>
+</html>
