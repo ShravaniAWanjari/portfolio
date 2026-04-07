@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shravani Wanjari — Portfolio</title>
+    <meta name="description" content="Portfolio of Shravani Wanjari — Designer & Developer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(100, 200, 150, 0.4) transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #080c0a;
+            color: #e4f0ea;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* GRAIN */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.32;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* BG */
+        .bg-gradient {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+        }
+
+        .blob-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(40, 180, 120, 0.3) 0%, transparent 70%);
+            top: -10%; left: -8%;
+        }
+
+        .blob-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(60, 120, 200, 0.25) 0%, transparent 70%);
+            bottom: 5%; right: -5%;
+        }
+
+        .blob-3 {
+            width: 450px; height: 450px;
+            background: radial-gradient(circle, rgba(80, 200, 160, 0.2) 0%, transparent 70%);
+            top: 50%; left: 40%;
+        }
+
+        .blob-4 {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(30, 100, 180, 0.18) 0%, transparent 70%);
+            top: 20%; right: 10%;
+        }
+
+        /* LAYOUT */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            margin-bottom: 56px;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #5ee9a0;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-pills {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            padding: 4px;
+        }
+
+        .nav-pills a {
+            display: block;
+            padding: 8px 20px;
+            border-radius: 100px;
+            color: rgba(228, 240, 234, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills a:hover, .nav-pills a.active {
+            background: rgba(94, 233, 160, 0.1);
+            color: #5ee9a0;
+        }
+
+        /* BENTO */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(160px, auto);
+            gap: 12px;
+        }
+
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(94, 233, 160, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 60px rgba(40, 180, 120, 0.08);
+        }
+
+        /* Sizes */
+        .span-2-col { grid-column: span 2; }
+        .span-3-col { grid-column: span 3; }
+        .span-2-row { grid-row: span 2; }
+
+        /* Labels */
+        .card-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: rgba(94, 233, 160, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: rgba(228, 240, 234, 0.4);
+            line-height: 1.7;
+        }
+
+        /* HERO */
+        .card-hero {
+            justify-content: center;
+            min-height: 380px;
+            background: linear-gradient(155deg, rgba(40, 180, 120, 0.08), rgba(8, 12, 10, 0.6));
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(94, 233, 160, 0.6);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-eyebrow .line {
+            width: 32px;
+            height: 1px;
+            background: rgba(94, 233, 160, 0.3);
+        }
+
+        .hero-name {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .hero-name .mint {
+            color: #5ee9a0;
+        }
+
+        .hero-name .muted {
+            color: rgba(228, 240, 234, 0.25);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: rgba(228, 240, 234, 0.4);
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        /* PHOTO CARD */
+        .card-photo {
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(160deg, rgba(60, 120, 200, 0.1), rgba(8, 12, 10, 0.8));
+        }
+
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5ee9a0, #3c78c8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            color: #080c0a;
+            margin-bottom: 16px;
+        }
+
+        .card-photo .card-desc {
+            text-align: center;
+        }
+
+        /* STATUS BAR */
+        .card-status-bar {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 32px;
+        }
+
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(74, 222, 128, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.12);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #4ade80;
+        }
+
+        .status-chip .dot {
+            width: 6px; height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+        }
+
+        .location-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: rgba(228, 240, 234, 0.4);
+        }
+
+        .divider {
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .time-display {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(94, 233, 160, 0.5);
+        }
+
+        /* ABOUT CARD */
+        .card-about {
+            justify-content: flex-end;
+        }
+
+        /* SKILLS CARD */
+        .card-skills { justify-content: flex-start; }
+
+        .skills-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .skill-pill {
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .pill-primary {
+            background: rgba(94, 233, 160, 0.1);
+            border: 1px solid rgba(94, 233, 160, 0.12);
+            color: #5ee9a0;
+        }
+
+        .pill-secondary {
+            background: rgba(60, 120, 200, 0.08);
+            border: 1px solid rgba(60, 120, 200, 0.1);
+            color: rgba(120, 180, 255, 0.8);
+        }
+
+        .pill-tertiary {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(228, 240, 234, 0.5);
+        }
+
+        .skill-pill:hover {
+            transform: translateY(-2px);
+        }
+
+        /* STATS */
+        .stats-row {
+            display: flex;
+            gap: 32px;
+            margin-top: auto;
+        }
+
+        .stat-item {}
+
+        .stat-num {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #5ee9a0;
+        }
+
+        .stat-lbl {
+            font-size: 0.7rem;
+            color: rgba(228, 240, 234, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 2px;
+        }
+
+        /* PROJECT CARDS */
+        .card-project { justify-content: flex-end; }
+
+        .proj-mint { background: linear-gradient(160deg, rgba(94, 233, 160, 0.08), rgba(8, 12, 10, 0.7)); }
+        .proj-blue { background: linear-gradient(160deg, rgba(60, 120, 200, 0.08), rgba(8, 12, 10, 0.7)); }
+        .proj-teal { background: linear-gradient(160deg, rgba(50, 200, 180, 0.08), rgba(8, 12, 10, 0.7)); }
+        .proj-indigo { background: linear-gradient(160deg, rgba(100, 80, 220, 0.08), rgba(8, 12, 10, 0.7)); }
+
+        .proj-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+
+        .badge-mint { background: rgba(94, 233, 160, 0.1); color: #5ee9a0; }
+        .badge-blue { background: rgba(60, 120, 200, 0.1); color: rgba(120, 180, 255, 0.8); }
+        .badge-teal { background: rgba(50, 200, 180, 0.1); color: rgba(100, 230, 200, 0.8); }
+        .badge-indigo { background: rgba(100, 80, 220, 0.1); color: rgba(160, 140, 255, 0.8); }
+
+        .proj-arrow {
+            position: absolute;
+            top: 24px; right: 24px;
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: rgba(228, 240, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .bento-card:hover .proj-arrow {
+            background: rgba(94, 233, 160, 0.1);
+            border-color: rgba(94, 233, 160, 0.15);
+            color: #5ee9a0;
+        }
+
+        /* CONTACT */
+        .card-contact { justify-content: flex-end; }
+
+        .contact-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-mint {
+            background: #5ee9a0;
+            color: #080c0a;
+        }
+
+        .btn-mint:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 32px rgba(94, 233, 160, 0.25);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(228, 240, 234, 0.6);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #e4f0ea;
+        }
+
+        /* MARQUEE */
+        .card-marquee {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .marquee-inner {
+            display: flex;
+            gap: 32px;
+            white-space: nowrap;
+            animation: scroll-m 22s linear infinite;
+        }
+
+        .marquee-word {
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(94, 233, 160, 0.15);
+        }
+
+        @keyframes scroll-m {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 48px 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            font-size: 0.72rem;
+            color: rgba(228, 240, 234, 0.18);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .span-3-col { grid-column: span 2; }
+            .hero-name { font-size: 2.8rem; }
+            .nav-pills { display: none; }
+            .stats-row { gap: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .span-2-col, .span-3-col { grid-column: span 1; }
+            .hero-name { font-size: 2.2rem; letter-spacing: -1px; }
+            .card-status-bar { flex-wrap: wrap; }
+            .divider { display: none; }
+            .time-display { display: none; }
+            .contact-actions { flex-direction: column; }
+            .stats-row { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">SW</div>
+            <ul class="nav-pills">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="bento-grid">
+            <!-- HERO -->
+            <div class="bento-card card-hero span-2-col span-2-row" id="about">
+                <div class="hero-eyebrow">
+                    <span class="line"></span>
+                    Designer & Developer
+                </div>
+                <div class="hero-name">
+                    <span class="mint">Shravani</span><br>
+                    <span class="muted">Wanjari</span>
+                </div>
+                <div class="hero-subtitle">I create digital experiences that blend beautiful design with clean, performant code. Currently crafting the future of web.</div>
+            </div>
+
+            <!-- AVATAR -->
+            <div class="bento-card card-photo">
+                <div class="avatar-circle">SW</div>
+                <div class="card-desc">India 🇮🇳</div>
+            </div>
+
+            <!-- STATS -->
+            <div class="bento-card" style="justify-content: flex-end;">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-num">3+</div>
+                        <div class="stat-lbl">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">20+</div>
+                        <div class="stat-lbl">Projects</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATUS BAR -->
+            <div class="bento-card card-status-bar span-3-col">
+                <div class="status-chip">
+                    <span class="dot"></span>
+                    Available for work
+                </div>
+                <div class="location-chip">📍 India • UTC+5:30</div>
+                <div class="divider"></div>
+                <div class="time-display" id="current-time">--:--</div>
+            </div>
+
+            <!-- ABOUT -->
+            <div class="bento-card card-about">
+                <div class="card-label">About</div>
+                <div class="card-title">Building for the web.</div>
+                <div class="card-desc">Passionate about clean design, performant code, and interfaces that delight. I bridge the gap between design and engineering.</div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="bento-card card-skills span-2-col">
+                <div class="card-label">Skills & Tools</div>
+                <div class="card-title">My Toolkit</div>
+                <div class="skills-flow">
+                    <span class="skill-pill pill-primary">React</span>
+                    <span class="skill-pill pill-primary">Next.js</span>
+                    <span class="skill-pill pill-secondary">TypeScript</span>
+                    <span class="skill-pill pill-secondary">Python</span>
+                    <span class="skill-pill pill-primary">Node.js</span>
+                    <span class="skill-pill pill-tertiary">Figma</span>
+                    <span class="skill-pill pill-tertiary">PostgreSQL</span>
+                    <span class="skill-pill pill-secondary">Tailwind</span>
+                    <span class="skill-pill pill-tertiary">Git</span>
+                    <span class="skill-pill pill-primary">Docker</span>
+                </div>
+            </div>
+
+            <!-- MARQUEE -->
+            <div class="bento-card card-marquee span-3-col">
+                <div class="marquee-inner">
+                    <span class="marquee-word">DESIGN</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">DEVELOP</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">DEPLOY</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">ITERATE</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">DESIGN</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">DEVELOP</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">DEPLOY</span>
+                    <span class="marquee-word">✦</span>
+                    <span class="marquee-word">ITERATE</span>
+                    <span class="marquee-word">✦</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 1 -->
+            <div class="bento-card card-project proj-mint span-2-col span-2-row" id="work">
+                <div class="proj-arrow">↗</div>
+                <div class="proj-badge badge-mint">Design</div>
+                <div class="card-title">Brand Identity System</div>
+                <div class="card-desc">Complete visual identity for a fintech startup — logo, typography, color system, and brand guidelines.</div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="bento-card card-project proj-blue span-2-row">
+                <div class="proj-arrow">↗</div>
+                <div class="proj-badge badge-blue">Full-Stack</div>
+                <div class="card-title">Analytics Dashboard</div>
+                <div class="card-desc">Real-time data viz with interactive charts and dark mode.</div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="bento-card card-project proj-teal">
+                <div class="proj-arrow">↗</div>
+                <div class="proj-badge badge-teal">AI / ML</div>
+                <div class="card-title">AI Chatbot</div>
+                <div class="card-desc">NLP-powered conversational AI interface.</div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="bento-card card-project proj-indigo span-2-col">
+                <div class="proj-arrow">↗</div>
+                <div class="proj-badge badge-indigo">Full-Stack</div>
+                <div class="card-title">E-Commerce Platform</div>
+                <div class="card-desc">Full-stack marketplace with payments, inventory management, and admin dashboard.</div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="bento-card card-contact span-2-col" id="contact">
+                <div class="card-label">Get in Touch</div>
+                <div class="card-title">Let's create something together.</div>
+                <div class="card-desc">Have an idea? Let's turn it into reality.</div>
+                <div class="contact-actions">
+                    <a href="mailto:hello@shravani.dev" class="action-btn btn-mint">✉️ Let's Talk</a>
+                    <a href="#" class="action-btn btn-ghost">🔗 LinkedIn</a>
+                    <a href="#" class="action-btn btn-ghost">🐙 GitHub</a>
+                    <a href="#" class="action-btn btn-ghost">🐦 Twitter</a>
+                </div>
+            </div>
+
+            <!-- QUOTE -->
+            <div class="bento-card" style="justify-content:center;align-items:center;text-align:center;">
+                <div style="font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:300;color:rgba(94,233,160,0.4);line-height:1.4;font-style:italic;">
+                    "Good design is invisible."
+                </div>
+                <div style="font-size:0.7rem;color:rgba(228,240,234,0.2);margin-top:12px;text-transform:uppercase;letter-spacing:2px;">— Dieter Rams</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Shravani Wanjari. Designed & developed with intention.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Live clock
+        function updateClock() {
+            const now = new Date();
+            const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Asia/Kolkata', hour12: false };
+            const el = document.getElementById('current-time');
+            if (el) el.textContent = now.toLocaleTimeString('en-IN', opts) + ' IST';
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
