@@ -1,0 +1,62 @@
+Shravani Ankur Wanjari
+shravani22wanjari@gmail.com | +91-9131808008 | linkedin.com/in/shravani-wanjari | github.com/ShravaniAWanjari
+Education
+Woxsen University, Hyderabad, India
+2022 – 2026
+B.Tech in Computer Science and Engineering – CGPA: 8.05/10
+Krishna Public School
+2019 – 2022
+12th Grade, CBSE – 77%
+10th Grade, CBSE – 91%
+Skills
+Languages: Python, C++ (STL, Low-Latency)
+AI-ML: PyTorch, Hugging Face, RAG, Time Series Analysis
+Back-End: FastAPI, REST APIs, Multi-threading
+Data: PostgreSQL, MongoDB
+Infrastructure and Full Stack: Docker, Kubernetes, Git, Vite, React 18
+Experience
+Quantitative Analyst + Backend Engineer, GoQuant Technologies
+Oct 2025 – Dec 2025
+Remote
+Full-time
+• Built and backtested a BTC/ETH trading bot using tick data resampled to 1s OHLC, achieving 4.62% return
+($256 PnL) on $5,500 NAV over 10 months of tick data.
+• Produced $2.01M USDT volume with realistic fee modeling ($619 in fees); identified and documented limit-order
+execution bugs affecting cancellations and price accuracy.
+Software Development Engineer Intern, GYTWorkz
+Jul 2025 – Sep 2025
+Onsite
+Full-time
+• Built an LLM-based analytics pipeline that reduced KPI analysis time from 1–2 hours to under 40 seconds, later
+optimized to 27 seconds end-to-end.
+• Designed a backend pipeline for Excel-based KPI data (23 KPIs × 12 months), enriching inputs to improve LLM
+insight quality; solution presented to ACMA and Tata AutoComp (TACO).
+Research Intern, AI Research Centre, Woxsen University
+Feb 2024 – Jul 2024
+Onsite
+Part-time
+• Led EEG emotion classification modeling on the DEAP dataset, achieving 86.9% accuracy and outperforming
+untuned XGBoost, SVM, GBM, and KNN baselines.
+• Co-authored the paper “XGBoost-based Emotion Classification in Healthcare Using Electroencephalogram Signals”,
+accepted at IEEE CAI 2025 (Santa Clara, CA).
+Projects
+Quant-NLP Research Suite: Systematic Signal Research and Testing with XAI
+Jan 2026 – Mar 2026
+• Developed a full-stack platform (FastAPI/React 18) automating the research lifecycle from Transformer train-
+ing/benchmarking to backtesting sentiment-gated strategies.
+• Implemented Confidence-Weighted Gating, achieving a 1.84 Sharpe Ratio for NLP-augmented strategies vs. 0.97
+for buy-and-hold baselines on Jan 2025 BTC/USD tick data.
+• Designed an interactive interface for live and custom headline stress-testing using Triple-Method XAI (Integrated
+Gradients, Occlusion, Grad × Input).
+• Integrated RAG-based “Market GPT” grounded in backtesting results and an automated reporting engine to
+synthesize backtest artifacts into professional-grade financial PDF summaries.
+Market Regime Detection using Wasserstein K-Means
+Jan 2025 – Mar 2025
+• Implemented Wasserstein-based regime detection with rolling windows and LSTM/GRU price modeling, achieving
+87% regime purity with clear cluster separation.
+Publications
+• P. Gajbhiye, M. Rege, S. Wanjari, V. Singh and H. K, “XGBoost-Based Emotion Classification in Health-
+care Using Electroencephalogram Signals,” 2025 IEEE Conference on Artificial Intelligence (CAI),
+Santa Clara, CA, USA, 2025, pp. 1670–1675, doi: 10.1109/CAI64502.2025.00296.
+• Key Contribution: Optimized XGBoost for EEG-based emotion classification on the DEAP dataset, achieving
+86.9% accuracy and outperforming SVM and ANN baselines.
