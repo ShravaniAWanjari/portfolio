@@ -18,8 +18,8 @@
 
     /* Text */
     --text-primary: #e8e6e3;
-    --text-secondary: rgba(232, 230, 227, 0.55);
-    --text-tertiary: rgba(232, 230, 227, 0.3);
+    --text-secondary: rgba(232, 230, 227, 0.7);
+    --text-tertiary: rgba(232, 230, 227, 0.45);
     --text-muted: rgba(232, 230, 227, 0.12);
 
     /* Accents — Bloomberg orange */
@@ -69,8 +69,8 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.65;
 }
 
 /* ===== GRAIN ===== */
@@ -705,7 +705,7 @@ body {
     display: flex;
     gap: 24px;
     white-space: nowrap;
-    animation: tape-scroll 28.5s linear infinite;
+    animation: tape-scroll 18s linear infinite;
 }
 
 .tape-item {
