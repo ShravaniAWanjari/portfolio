@@ -20,7 +20,7 @@
     --text-primary: #e8e6e3;
     --text-secondary: rgba(232, 230, 227, 0.7);
     --text-tertiary: rgba(232, 230, 227, 0.45);
-    --text-muted: rgba(232, 230, 227, 0.12);
+    --text-muted: rgba(232, 230, 227, 0.35);
 
     /* Accents — Bloomberg orange */
     --accent: #ff8c00;
@@ -552,7 +552,7 @@ body {
 .activity-time {
     font-size: 10px;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-tertiary);
     letter-spacing: 1px;
     min-width: 36px;
 }
