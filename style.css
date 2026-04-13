@@ -836,12 +836,14 @@ body {
     pointer-events: none;
 }
 
-.card-project:hover::after {
+.card-project:hover::after,
+.card-project.mobile-active::after {
     opacity: 1;
     visibility: visible;
 }
 
-.card-project:hover {
+.card-project:hover,
+.card-project.mobile-active {
     border-top-color: var(--accent);
 }
 
@@ -895,7 +897,9 @@ body {
 }
 
 .card-project:hover .github-bubble,
-.private-project:hover .private-bubble {
+.card-project.mobile-active .github-bubble,
+.private-project:hover .private-bubble,
+.private-project.mobile-active .private-bubble {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
@@ -1302,6 +1306,7 @@ body {
     text-decoration: none;
     border-bottom: 1px dashed rgba(77, 166, 255, 0.3);
     transition: all 0.2s ease;
+    word-break: break-all;
 }
 
 .term-link:hover {
@@ -1486,6 +1491,7 @@ body {
 
     .identity-role {
         flex-direction: column;
+        align-items: flex-start;
         gap: 4px;
     }
 

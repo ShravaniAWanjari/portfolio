@@ -160,4 +160,29 @@
         }
     });
 
+    // ===== MOBILE DOUBLE-TAP HOVER FOR CARDS =====
+    document.querySelectorAll('a.card-project, .private-project').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                if (!this.classList.contains('mobile-active')) {
+                    e.preventDefault(); 
+                    document.querySelectorAll('.mobile-active').forEach(function(c) {
+                        c.classList.remove('mobile-active');
+                    });
+                    this.classList.add('mobile-active');
+                }
+            }
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('a.card-project') && !e.target.closest('.private-project')) {
+                document.querySelectorAll('.mobile-active').forEach(function(c) {
+                    c.classList.remove('mobile-active');
+                });
+            }
+        }
+    });
+
 })();
