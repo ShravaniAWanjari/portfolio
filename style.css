@@ -687,9 +687,9 @@ body {
 
 .currently-value {
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* ===== TICKER TAPE ===== */
@@ -752,7 +752,7 @@ body {
 
 .about-body {
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 12px;
@@ -954,7 +954,7 @@ body {
 
 .project-desc {
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.65;
     padding: 0 16px;
@@ -1063,7 +1063,7 @@ body {
 .skill-chip {
     padding: 5px 12px;
     border-radius: var(--radius-sm);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-subtle);
@@ -1144,7 +1144,7 @@ body {
 
 .exp-bullets li {
     font-family: var(--font-body);
-    font-size: 12.5px;
+    font-size: 14.5px;
     color: var(--text-secondary);
     line-height: 1.7;
     padding-left: 16px;
