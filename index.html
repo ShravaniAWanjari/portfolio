@@ -92,13 +92,27 @@
                     <div class="activity-feed">
                         <div class="activity-item">
                             <span class="activity-time">2026</span>
+                            <span class="activity-dot dot-blue"></span>
+                            <span class="activity-text">Real-Time OHLCV Validation — <span class="hl-green">C++ Low-Latency
+                                    Ingestion</span></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">2026</span>
+                            <span class="activity-dot dot-purple"></span>
+                            <span class="activity-text">LOB Exchange Engine — <span class="hl-green">C++ Low-Latency
+                                    Order Matching</span></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">2026</span>
                             <span class="activity-dot dot-green"></span>
-                            <span class="activity-text">Quant-NLP Suite — <span class="hl-green">1.84 Sharpe</span></span>
+                            <span class="activity-text">Quant-NLP Suite — <span class="hl-green">Research framework for
+                                    news-based alpha</span></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-time">2025</span>
                             <span class="activity-dot dot-orange"></span>
-                            <span class="activity-text">GoQuant — BTC/ETH bot, <span class="hl-green">$2M+ vol</span></span>
+                            <span class="activity-text">GoQuant — BTC/ETH bot, <span class="hl-green">$2M+
+                                    vol</span></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-time">2025</span>
@@ -108,38 +122,20 @@
                         <div class="activity-item">
                             <span class="activity-time">2025</span>
                             <span class="activity-dot dot-orange"></span>
-                            <span class="activity-text">GYTWorkz — LLM pipeline, <span class="hl-green">27s E2E</span></span>
+                            <span class="activity-text">GYTWorkz — LLM based Analytics pipeline, <span
+                                    class="hl-green">27s
+                                    E2E</span></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-time">2025</span>
                             <span class="activity-dot dot-purple"></span>
-                            <span class="activity-text">Regime Detection — <span class="hl-green">87% purity</span></span>
+                            <span class="activity-text">Regime Detection — <span class="hl-green">87%
+                                    purity</span></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Code Snapshot -->
-                <div class="bento-card card-code-snapshot">
-                    <div class="card-header-bar">
-                        <span class="header-label">CODE SNAPSHOT</span>
-                        <span class="header-badge" style="background:rgba(77,166,255,0.12);color:#4da6ff;">PYTHON</span>
-                    </div>
-                    <div class="code-block">
-                        <pre><code><span class="code-kw">def</span> <span class="code-fn">backtest_strategy</span>(signals, prices):
-    <span class="code-str">"""Walk-forward backtest with
-    realistic fee modeling."""</span>
-    pnl = []
-    <span class="code-kw">for</span> i <span class="code-kw">in</span> <span class="code-fn">range</span>(<span class="code-fn">len</span>(signals)):
-        pos = signals[i] * prices[i]
-        fee = <span class="code-num">0.001</span> * <span class="code-fn">abs</span>(pos)
-        pnl.append(pos - fee)
-    sharpe = <span class="code-fn">compute_sharpe</span>(pnl)
-    <span class="code-kw">return</span> {
-        <span class="code-str">"sharpe"</span>: sharpe,
-        <span class="code-str">"total_pnl"</span>: <span class="code-fn">sum</span>(pnl)
-    }</code></pre>
-                    </div>
-                </div>
+
 
                 <!-- Status + Education -->
                 <div class="bento-card card-status">
@@ -354,46 +350,6 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="bento-card card-about-approach">
-                    <div class="card-header-bar">
-                        <span class="header-label">METHODOLOGY</span>
-                    </div>
-                    <div class="approach-list">
-                        <div class="approach-item">
-                            <span class="approach-num">01</span>
-                            <div class="approach-content">
-                                <span class="approach-name">RESEARCH</span>
-                                <span class="approach-desc">Hypothesis-driven analysis with rigorous statistical
-                                    validation and walk-forward testing.</span>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <span class="approach-num">02</span>
-                            <div class="approach-content">
-                                <span class="approach-name">ENGINEER</span>
-                                <span class="approach-desc">Low-latency, production-grade systems with Python, C++, and
-                                    FastAPI.</span>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <span class="approach-num">03</span>
-                            <div class="approach-content">
-                                <span class="approach-name">VALIDATE</span>
-                                <span class="approach-desc">Extensive backtesting with realistic fee modeling and
-                                    execution simulation.</span>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <span class="approach-num">04</span>
-                            <div class="approach-content">
-                                <span class="approach-name">PUBLISH</span>
-                                <span class="approach-desc">Peer-reviewed research and comprehensive documentation of
-                                    findings.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -406,8 +362,70 @@
                 <span class="section-shortcut">F3</span>
             </div>
             <div class="bento-grid research-grid">
+                <!-- Project: OHLCV Validation -->
+                <a href="https://github.com/ShravaniAWanjari/live-OHLCV-validation-system.git" target="_blank" style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-lg">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type badge-live">ONGOING</span>
+                        <span class="project-type type-algo">C++</span>
+                        <span class="project-type type-data">LOW-LATENCY</span>
+                    </div>
+                    <div class="project-id">PRJ-001</div>
+                    <h3 class="project-title">Real-Time OHLCV Validation System</h3>
+                    <p class="project-subtitle">Low-Latency Data Ingestion & Anomaly Detection</p>
+                    <p class="project-desc">A production-grade, real-time OHLCV data validation framework in C++. Ingests live data, validates quality in real-time, detects anomalies and latency gaps, and outputs clean/flagged data for downstream trading backends using lock-free data structures.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">C++20 · SPSC Queues · Lock-free</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Low-Latency</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">STATUS</span>
+                            <span class="meta-value">WIP — 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project: LOB Exchange -->
+                <a href="https://github.com/ShravaniAWanjari/Low-Latency-LOB-Engine.git" target="_blank" style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type badge-live">ONGOING</span>
+                        <span class="project-type type-algo">C++</span>
+                        <span class="project-type type-data">LOW-LATENCY</span>
+                    </div>
+                    <div class="project-id">PRJ-002</div>
+                    <h3 class="project-title">Limit Order Book (LOB) Engine</h3>
+                    <p class="project-subtitle">High-Performance Matching Engine</p>
+                    <p class="project-desc">Rebuilding the core of a stock exchange Limit Order Book (LOB) in C++. Architected for extreme low-latency processing, accurate order matching, and optimized memory layout to simulate real-world high-frequency trading infrastructure.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">C++ · Memory Optimization</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Sub-microsecond</span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- Project 1: Quant-NLP -->
-                <div class="bento-card card-project card-project-lg">
+                <a href="https://github.com/ShravaniAWanjari/twitter-sentiment-for-market.git" target="_blank" style="text-decoration:none; color:inherit;" class="bento-card card-project">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        View on GitHub
+                    </div>
                     <div class="project-tag-row">
                         <span class="project-type type-algo">ALGO TRADING</span>
                         <span class="project-type type-ml">NLP / ML</span>
@@ -438,10 +456,14 @@
                             <span class="meta-value">JAN 2026 – MAR 2026</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2: Regime Detection -->
-                <div class="bento-card card-project card-project-tall">
+                <a href="https://github.com/ShravaniAWanjari/Market-Regime-Detection_Wesserstein-Kmeans.git" target="_blank" style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        View on GitHub
+                    </div>
                     <div class="project-tag-row">
                         <span class="project-type type-stats">STATISTICS</span>
                         <span class="project-type type-ml">DEEP LEARNING</span>
@@ -466,10 +488,13 @@
                             <span class="meta-value">JAN – MAR 2025</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 3: BTC Trading Bot -->
-                <div class="bento-card card-project">
+                <div class="bento-card card-project private-project">
+                    <div class="private-bubble">
+                        Private code. Glad to discuss performance & mechanics!
+                    </div>
                     <div class="project-tag-row">
                         <span class="project-type type-algo">ALGO TRADING</span>
                     </div>
@@ -490,7 +515,7 @@
                 </div>
 
                 <!-- Project 4: EEG / Publication -->
-                <div class="bento-card card-project">
+                <div class="bento-card card-project static-project">
                     <div class="project-tag-row">
                         <span class="project-type type-stats">RESEARCH</span>
                         <span class="project-type type-ml">ML</span>
@@ -510,6 +535,10 @@
                             <span class="meta-value">10.1109/CAI64502</span>
                         </div>
                     </div>
+                    <div class="project-actions" style="display:flex; gap:10px; padding: 12px 16px;">
+                        <a href="https://ieeexplore.ieee.org/document/11050658" target="_blank" class="btn-outline" style="flex:1; justify-content:center; font-size:10px;">GO TO SITE ↗</a>
+                        <a href="https://drive.google.com/file/d/15GQbPBF35EnzOY3FZXQB5lCXe6qKgvM5/view?usp=sharing" target="_blank" class="btn-outline" style="flex:1; justify-content:center; font-size:10px;">VIEW PAPER ↗</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -528,35 +557,10 @@
                     <div class="card-header-bar">
                         <span class="header-label">LANGUAGES</span>
                     </div>
-                    <div class="skill-bars">
-                        <div class="skill-row">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width:95%"></div>
-                            </div>
-                            <span class="skill-pct">95%</span>
-                        </div>
-                        <div class="skill-row">
-                            <span class="skill-name">C++ (STL)</span>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width:72%"></div>
-                            </div>
-                            <span class="skill-pct">72%</span>
-                        </div>
-                        <div class="skill-row">
-                            <span class="skill-name">SQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width:85%"></div>
-                            </div>
-                            <span class="skill-pct">85%</span>
-                        </div>
-                        <div class="skill-row">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width:78%"></div>
-                            </div>
-                            <span class="skill-pct">78%</span>
-                        </div>
+                    <div class="skill-tags-grid">
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">C++ (STL)</span>
+                        <span class="skill-chip">SQL</span>
                     </div>
                 </div>
 
