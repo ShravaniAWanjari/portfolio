@@ -79,7 +79,7 @@
                     <div class="identity-actions">
                         <a href="#research" class="btn-terminal">VIEW RESEARCH <span class="btn-arrow">→</span></a>
                         <a href="#contact" class="btn-outline">CONNECT</a>
-                        <a href="https://drive.google.com/file/d/1vclFHYs-yshBHEEPCbK9xuHBzwIX3r0W/view?usp=sharing"
+                        <a href="https://drive.google.com/file/d/1e9nJ_UyBBzhdnYj1kzGqHDAdfPE1v6fE/view?usp=sharing"
                             target="_blank" class="btn-outline">RESUME ↗</a>
                     </div>
                 </div>
@@ -93,10 +93,15 @@
                     <div class="activity-feed">
                         <div class="activity-item">
                             <span class="activity-time">2026</span>
+                            <span class="activity-dot dot-orange"></span>
+                            <span class="activity-text">Iris Engine - <span class="hl-green">Explainable LLM
+                                    Platform</span></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">2026</span>
                             <span class="activity-dot dot-blue"></span>
-                            <span class="activity-text">Real-Time OHLCV Validation - <span class="hl-green">C++
-                                    Low-Latency
-                                    Ingestion</span></span>
+                            <span class="activity-text">HFT-Lite Engine - <span class="hl-green">C++ Low-Latency
+                                    Validation</span></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-time">2026</span>
@@ -194,6 +199,8 @@
                 <span class="tape-dot">■</span>
                 <span class="tape-item">C++ (LOW-LATENCY)</span>
                 <span class="tape-dot">■</span>
+                <span class="tape-item">TYPESCRIPT</span>
+                <span class="tape-dot">■</span>
                 <span class="tape-item">PYTORCH</span>
                 <span class="tape-dot">■</span>
                 <span class="tape-item">FASTAPI</span>
@@ -218,6 +225,8 @@
                 <span class="tape-item">PYTHON</span>
                 <span class="tape-dot">■</span>
                 <span class="tape-item">C++ (LOW-LATENCY)</span>
+                <span class="tape-dot">■</span>
+                <span class="tape-item">TYPESCRIPT</span>
                 <span class="tape-dot">■</span>
                 <span class="tape-item">PYTORCH</span>
                 <span class="tape-dot">■</span>
@@ -364,7 +373,7 @@
             </div>
             <div class="bento-grid research-grid">
                 <!-- Project: OHLCV Validation -->
-                <a href="https://github.com/ShravaniAWanjari/live-OHLCV-validation-system.git" target="_blank"
+                <a href="https://github.com/ShravaniAWanjari/live-OHLCV-validation-system" target="_blank"
                     style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-lg">
                     <div class="github-bubble">
                         <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
@@ -376,16 +385,17 @@
                         View on GitHub
                     </div>
                     <div class="project-tag-row">
-                        <span class="project-type badge-live">ONGOING</span>
                         <span class="project-type type-algo">C++</span>
                         <span class="project-type type-data">LOW-LATENCY</span>
                     </div>
                     <div class="project-id">PRJ-001</div>
-                    <h3 class="project-title">Real-Time OHLCV Validation System</h3>
+                    <h3 class="project-title">HFT-Lite: Real-Time Market Data Validation Engine</h3>
                     <p class="project-subtitle">Low-Latency Data Ingestion & Anomaly Detection</p>
-                    <p class="project-desc">A production-grade, real-time OHLCV data validation framework in C++.
-                        Ingests live data, validates quality in real-time, detects anomalies and latency gaps, and
-                        outputs clean/flagged data for downstream trading backends using lock-free data structures.</p>
+                    <p class="project-desc">Built a low-latency real-time market data validation engine in C++20 using
+                        lock-free SPSC queues, atomics, cache-aligned data structures, and multithreaded streaming
+                        architecture. Designed a live OHLCV ingestion and validation pipeline with asynchronous
+                        WebSocket processing, real-time anomaly detection, and ingestion-to-validation latency tracking
+                        for stale ticks, timestamp gaps, and invalid market data.</p>
                     <div class="project-meta">
                         <div class="meta-item">
                             <span class="meta-label">STACK</span>
@@ -396,8 +406,43 @@
                             <span class="meta-value highlight-green">Low-Latency</span>
                         </div>
                         <div class="meta-item">
-                            <span class="meta-label">STATUS</span>
-                            <span class="meta-value">WIP - 2026</span>
+                            <span class="meta-label">PERIOD</span>
+                            <span class="meta-value">APR 2026 - MAY 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project: Iris Operational Intelligence -->
+                <a href="https://github.com/ShravaniAWanjari/futures-first-task" target="_blank"
+                    style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-ml">LLM / AI</span>
+                        <span class="project-type type-data">FULL-STACK</span>
+                    </div>
+                    <div class="project-id">PRJ-002</div>
+                    <h3 class="project-title">Iris: Operational Intelligence Platform</h3>
+                    <p class="project-subtitle">Deterministic LLM Orchestration</p>
+                    <p class="project-desc">A management-focused intelligence platform combining structured analytics
+                        (SQLite) and document retrieval (ChromaDB). Designed for operational traceability and
+                        explainability, leveraging deterministic routing before generative synthesis to prevent LLM
+                        hallucinations.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">Python · SQLite · ChromaDB · LLMs</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Explainable AI</span>
                         </div>
                     </div>
                 </a>
@@ -419,7 +464,7 @@
                         <span class="project-type type-algo">C++</span>
                         <span class="project-type type-data">LOW-LATENCY</span>
                     </div>
-                    <div class="project-id">PRJ-002</div>
+                    <div class="project-id">PRJ-003</div>
                     <h3 class="project-title">Limit Order Book (LOB) Engine</h3>
                     <p class="project-subtitle">High-Performance Matching Engine</p>
                     <p class="project-desc">Rebuilding the core of a stock exchange Limit Order Book (LOB) in C++.
@@ -437,7 +482,7 @@
                     </div>
                 </a>
 
-                <!-- Project 1: Quant-NLP -->
+
                 <a href="https://github.com/ShravaniAWanjari/twitter-sentiment-for-market.git" target="_blank"
                     style="text-decoration:none; color:inherit;" class="bento-card card-project">
                     <div class="github-bubble">
@@ -454,7 +499,7 @@
                         <span class="project-type type-ml">NLP / ML</span>
                         <span class="project-type type-data">FULL-STACK</span>
                     </div>
-                    <div class="project-id">PRJ-001</div>
+                    <div class="project-id">PRJ-004</div>
                     <h3 class="project-title">Quant-NLP Research Suite</h3>
                     <p class="project-subtitle">Systematic Signal Research & Testing with XAI</p>
                     <p class="project-desc">Full-stack platform (FastAPI/React 18) automating the research lifecycle
@@ -481,7 +526,6 @@
                     </div>
                 </a>
 
-                <!-- Project 2: Regime Detection -->
                 <a href="https://github.com/ShravaniAWanjari/Market-Regime-Detection_Wesserstein-Kmeans.git"
                     target="_blank" style="text-decoration:none; color:inherit;"
                     class="bento-card card-project card-project-tall">
@@ -498,7 +542,7 @@
                         <span class="project-type type-stats">STATISTICS</span>
                         <span class="project-type type-ml">DEEP LEARNING</span>
                     </div>
-                    <div class="project-id">PRJ-002</div>
+                    <div class="project-id">PRJ-006</div>
                     <h3 class="project-title">Market Regime Detection</h3>
                     <p class="project-subtitle">Wasserstein K-Means Clustering</p>
                     <p class="project-desc">Implemented Wasserstein-based regime detection with rolling windows and
@@ -528,7 +572,7 @@
                     <div class="project-tag-row">
                         <span class="project-type type-algo">ALGO TRADING</span>
                     </div>
-                    <div class="project-id">PRJ-003</div>
+                    <div class="project-id">PRJ-005</div>
                     <h3 class="project-title">BTC/ETH Trading Bot</h3>
                     <p class="project-desc">Backtested trading bot using tick data → 1s OHLC. $2.01M USDT volume,
                         realistic fee modeling, limit-order execution analysis.</p>
@@ -624,6 +668,7 @@
                         <span class="skill-chip">Multi-threading</span>
                         <span class="skill-chip">PostgreSQL</span>
                         <span class="skill-chip">MongoDB</span>
+                        <span class="skill-chip">SQLite</span>
                         <span class="skill-chip">Redis</span>
                     </div>
                 </div>
@@ -634,6 +679,8 @@
                         <span class="header-label">INFRASTRUCTURE & FRONTEND</span>
                     </div>
                     <div class="skill-tags-grid">
+                        <span class="skill-chip">HTML</span>
+                        <span class="skill-chip">CSS</span>
                         <span class="skill-chip">Docker</span>
                         <span class="skill-chip">Kubernetes</span>
                         <span class="skill-chip">Git</span>

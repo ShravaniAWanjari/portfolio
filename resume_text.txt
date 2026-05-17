@@ -12,8 +12,8 @@ Skills
 Languages: Python, C++ (STL, Low-Latency)
 AI-ML: PyTorch, Hugging Face, RAG, Time Series Analysis
 Back-End: FastAPI, REST APIs, Multi-threading
-Data: PostgreSQL, MongoDB
-Infrastructure and Full Stack: Docker, Kubernetes, Git, Vite, React 18
+Data: PostgreSQL, MongoDB, SQLite
+Infrastructure and Full Stack: HTML, CSS, Docker, Kubernetes, Git, Vite, React 18
 Experience
 Quantitative Analyst + Backend Engineer, GoQuant Technologies
 Oct 2025 – Dec 2025
@@ -40,6 +40,18 @@ untuned XGBoost, SVM, GBM, and KNN baselines.
 • Co-authored the paper “XGBoost-based Emotion Classification in Healthcare Using Electroencephalogram Signals”,
 accepted at IEEE CAI 2025 (Santa Clara, CA).
 Projects
+HFT-Lite: Real-Time Market Data Validation Engine
+Apr 2026 – May 2026
+• Built a low-latency real-time market data validation engine in C++20 using lock-free SPSC queues, atomics,
+cache-aligned data structures, and multithreaded streaming architecture.
+• Designed a live OHLCV ingestion and validation pipeline with asynchronous WebSocket processing, real-time
+anomaly detection, and ingestion-to-validation latency tracking for stale ticks, timestamp gaps, and invalid market
+data.
+Iris: Management-Focused Operational Intelligence Platform
+May 2026
+• Built a management-focused operational intelligence platform combining structured analytics (SQLite) and document intelligence (ChromaDB) with conversational querying.
+• Designed an orchestration pipeline utilizing deterministic routing and explainable source tracing to keep responses grounded in actual operational evidence.
+• Implemented a system where the LLM performs generative synthesis only after rigorous retrieval, validation, and context selection to prevent hallucinations.
 Quant-NLP Research Suite: Systematic Signal Research and Testing with XAI
 Jan 2026 – Mar 2026
 • Developed a full-stack platform (FastAPI/React 18) automating the research lifecycle from Transformer train-
