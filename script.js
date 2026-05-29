@@ -185,4 +185,25 @@
         }
     });
 
+    // ===== THEME TOGGLE =====
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        // Check local storage
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeToggle.textContent = 'DARK';
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = 'DARK';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = 'LIGHT';
+            }
+        });
+    }
+
 })();
