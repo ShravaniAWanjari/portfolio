@@ -118,6 +118,12 @@ body.light-mode .btn-outline {
     background: #f0f2f5;
 }
 
+body.light-mode .btn-outline:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
 /* Kill all remaining hardcoded colors in light mode */
 body.light-mode .dot-green,
 body.light-mode .dot-orange,
