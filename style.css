@@ -67,6 +67,20 @@ body.light-mode {
     --text-secondary: #000000;
     --text-tertiary: #000000;
     --text-muted: #000000;
+
+    /* All colors → pure black */
+    --accent: #000000;
+    --accent-dim: rgba(0, 0, 0, 0.15);
+    --accent-bg: rgba(0, 0, 0, 0.05);
+
+    --green: #000000;
+    --green-dim: rgba(0, 0, 0, 0.1);
+    --red: #000000;
+    --red-dim: rgba(0, 0, 0, 0.1);
+    --blue: #000000;
+    --blue-dim: rgba(0, 0, 0, 0.1);
+    --yellow: #000000;
+    --purple: #000000;
 }
 
 body.light-mode .bento-card,
@@ -102,6 +116,117 @@ body.light-mode .btn-outline {
     box-shadow: 4px 4px 8px #c5c8cb, -4px -4px 8px #ffffff;
     border: 1px solid #000000;
     background: #f0f2f5;
+}
+
+/* Kill all remaining hardcoded colors in light mode */
+body.light-mode .dot-green,
+body.light-mode .dot-orange,
+body.light-mode .dot-blue,
+body.light-mode .dot-purple {
+    background: #000000;
+    box-shadow: none;
+}
+
+body.light-mode .status-dot-green {
+    background: #000000;
+    box-shadow: none;
+}
+
+body.light-mode .live-dot {
+    background: #000000;
+    box-shadow: none;
+}
+
+body.light-mode .skill-fill {
+    background: linear-gradient(90deg, #000000, #333333);
+}
+
+body.light-mode .term-link {
+    color: #000000;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .term-link:hover {
+    color: #000000;
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .tape-dot {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .type-algo,
+body.light-mode .type-ml,
+body.light-mode .type-stats,
+body.light-mode .type-data {
+    background: rgba(0, 0, 0, 0.08);
+    color: #000000;
+}
+
+body.light-mode .badge-positive,
+body.light-mode .badge-live {
+    background: rgba(0, 0, 0, 0.08);
+    color: #000000;
+}
+
+body.light-mode .highlight-green {
+    color: #000000;
+}
+
+body.light-mode .project-subtitle {
+    color: #000000;
+}
+
+body.light-mode .github-bubble,
+body.light-mode .private-bubble {
+    background: rgba(240, 242, 245, 0.95);
+    border: 1px solid #000000;
+    color: #000000;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+/* Link icon boxes — black bg, white text */
+body.light-mode .link-icon {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* VIEW WORK button — white text on black bg */
+body.light-mode .btn-terminal {
+    color: #ffffff;
+}
+
+body.light-mode .btn-terminal:hover {
+    background: #333333;
+    box-shadow: 4px 4px 8px #c5c8cb, -4px -4px 8px #ffffff;
+}
+
+/* Project card hover — sleek light overlay instead of heavy dark */
+body.light-mode .card-project::after {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+body.light-mode .card-project:hover {
+    box-shadow: 8px 8px 16px #c5c8cb, -8px -8px 16px #ffffff;
+}
+
+/* Card headers — black bg, white text */
+body.light-mode .card-header-bar {
+    background: #000000;
+    border-bottom: 1px solid #000000;
+}
+
+body.light-mode .header-label {
+    color: #ffffff;
+}
+
+body.light-mode .header-badge,
+body.light-mode .badge-live,
+body.light-mode .badge-positive,
+body.light-mode .badge-negative {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
 }
 
 /* ===== RESET ===== */
