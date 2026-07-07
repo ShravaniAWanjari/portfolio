@@ -327,4 +327,34 @@
         }
     });
 
+    // ===== PROJECTS PAGE TABS =====
+    var tabBtns = document.querySelectorAll('.tab-btn');
+    var tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length > 0 && tabContents.length > 0) {
+        tabBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+
+                // Remove active from all tabs
+                tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                // Add active to clicked tab
+                this.classList.add('active');
+
+                // Hide all contents
+                tabContents.forEach(function(content) {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+
+                // Show target content
+                var targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    targetContent.style.display = ''; // relies on CSS `.tab-content.active { display: grid; }`
+                }
+            });
+        });
+    }
+
 })();

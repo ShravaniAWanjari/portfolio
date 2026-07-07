@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Shravani Wanjari</title>
+    <meta name="description"
+        content="Shravani Wanjari - Quant Developer, building algorithmic trading systems and ML-driven research tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Grain -->
+    <div class="grain-overlay"></div>
+    <!-- Scanlines -->
+    <div class="scanlines"></div>
+
+    <div class="page-wrapper">
+        <!-- ===== TOP BAR ===== -->
+        <header class="top-bar" id="main-nav">
+            <div class="top-bar-inner">
+                <div class="top-bar-left">
+                    <div class="terminal-logo">
+                        <span class="logo-bracket">[</span>
+                        <a href="index.html" style="text-decoration:none; color:inherit;"><span class="logo-name">SW</span></a>
+                        <span class="logo-bracket">]</span>
+                    </div>
+                    <div class="top-bar-divider"></div>
+                    <span class="top-bar-label">All Projects & Work</span>
+                </div>
+                <nav class="top-bar-nav">
+                    <a href="index.html#about" class="nav-cmd" data-key="F1">ABOUT</a>
+                    <a href="index.html#experience" class="nav-cmd" data-key="F2">EXPERIENCE</a>
+                    <a href="index.html#research" class="nav-cmd" data-key="F3">WORK</a>
+                    <a href="index.html#skills" class="nav-cmd" data-key="F4">SKILLS</a>
+                    <a href="index.html#contact" class="nav-cmd" data-key="F5">CONTACT</a>
+                </nav>
+                <div class="top-bar-right">
+                    <button id="theme-toggle" class="nav-cmd" title="Toggle Light Mode" data-key="L">☀ LIGHT</button>
+                    <div class="top-bar-divider"></div>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span class="live-text">LIVE</span>
+                    </div>
+                    <div class="top-bar-divider"></div>
+                    <span class="clock-display" id="live-clock">--:--:--</span>
+                    <span class="date-display" id="live-date">---</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== PROJECTS/RESEARCH TABS ===== -->
+        <section class="section" style="padding-top: 120px;">
+            <div class="section-header" style="justify-content: center; margin-bottom: 24px;">
+                <h2 class="section-title">ALL WORK</h2>
+            </div>
+            
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="projects-grid">PROJECTS (6)</button>
+                <button class="tab-btn" data-target="research-grid">RESEARCH (1)</button>
+            </div>
+
+            <!-- PROJECTS GRID -->
+            <div id="projects-grid" class="bento-grid research-grid tab-content active">
+                <!-- Project 1: HFT-Lite -->
+                <a href="https://github.com/ShravaniAWanjari/live-OHLCV-validation-system.git" target="_blank"
+                    style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-lg">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-algo">C++</span>
+                        <span class="project-type type-data">LOW-LATENCY</span>
+                    </div>
+                    <div class="project-id">PRJ-001</div>
+                    <h3 class="project-title">HFT-Lite: Real-Time Market Data Validation Engine</h3>
+                    <p class="project-subtitle">Low-Latency Data Ingestion & Anomaly Detection</p>
+                    <p class="project-desc">Built a low-latency real-time market data validation engine in C++20 using
+                        lock-free SPSC queues, atomics, cache-aligned data structures, and multithreaded streaming
+                        architecture. Designed a live OHLCV ingestion and validation pipeline with asynchronous
+                        WebSocket processing, real-time anomaly detection, and ingestion-to-validation latency tracking
+                        for stale ticks, timestamp gaps, and invalid market data.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">C++20 · SPSC Queues · Lock-free</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Low-Latency</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">PERIOD</span>
+                            <span class="meta-value">APR 2026 - MAY 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project: Iris Operational Intelligence -->
+                <a href="https://github.com/ShravaniAWanjari/futures-first-task" target="_blank"
+                    style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-ml">LLM / AI</span>
+                        <span class="project-type type-data">FULL-STACK</span>
+                    </div>
+                    <div class="project-id">PRJ-002</div>
+                    <h3 class="project-title">Iris: Operational Intelligence Platform</h3>
+                    <p class="project-subtitle">Deterministic LLM Orchestration</p>
+                    <p class="project-desc">A management-focused intelligence platform combining structured analytics
+                        (SQLite) and document retrieval (ChromaDB). Designed for operational traceability and
+                        explainability, leveraging deterministic routing before generative synthesis to prevent LLM
+                        hallucinations.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">Python · SQLite · ChromaDB · LLMs</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Explainable AI</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project: LOB Exchange -->
+                <a href="https://github.com/ShravaniAWanjari/exchange-order-matching-engine.git" target="_blank"
+                    style="text-decoration:none; color:inherit;" class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type badge-live">ONGOING</span>
+                        <span class="project-type type-algo">C++</span>
+                        <span class="project-type type-data">LOW-LATENCY</span>
+                    </div>
+                    <div class="project-id">PRJ-003</div>
+                    <h3 class="project-title">Limit Order Book (LOB) Engine</h3>
+                    <p class="project-subtitle">High-Performance Matching Engine</p>
+                    <p class="project-desc">Rebuilding the core of a stock exchange Limit Order Book (LOB) in C++.
+                        Architected for extreme low-latency processing, accurate order matching, and optimized memory
+                        layout to simulate real-world high-frequency trading infrastructure.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">C++ · Memory Optimization</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">FOCUS</span>
+                            <span class="meta-value highlight-green">Sub-microsecond</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/ShravaniAWanjari/twitter-sentiment-for-market.git" target="_blank"
+                    style="text-decoration:none; color:inherit;" class="bento-card card-project">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-algo">ALGO TRADING</span>
+                        <span class="project-type type-ml">NLP / ML</span>
+                        <span class="project-type type-data">FULL-STACK</span>
+                    </div>
+                    <div class="project-id">PRJ-004</div>
+                    <h3 class="project-title">Quant-NLP Research Suite</h3>
+                    <p class="project-subtitle">Systematic Signal Research & Testing with XAI</p>
+                    <p class="project-desc">Full-stack platform (FastAPI/React 18) automating the research lifecycle
+                        from Transformer training to backtesting sentiment-gated strategies. Implements
+                        Confidence-Weighted Gating, Triple-Method XAI (Integrated Gradients, Occlusion, Grad×Input), and
+                        RAG-based "Market GPT" for automated report synthesis.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">FastAPI · React 18 · PyTorch · HuggingFace</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">SHARPE</span>
+                            <span class="meta-value highlight-green">1.84</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">BASELINE</span>
+                            <span class="meta-value">0.97 (B&H)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">PERIOD</span>
+                            <span class="meta-value">JAN 2026 – MAR 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/ShravaniAWanjari/Market-Regime-Detection_Wesserstein-Kmeans.git"
+                    target="_blank" style="text-decoration:none; color:inherit;"
+                    class="bento-card card-project card-project-tall">
+                    <div class="github-bubble">
+                        <svg class="gh-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-stats">STATISTICS</span>
+                        <span class="project-type type-ml">DEEP LEARNING</span>
+                    </div>
+                    <div class="project-id">PRJ-006</div>
+                    <h3 class="project-title">Market Regime Detection</h3>
+                    <p class="project-subtitle">Wasserstein K-Means Clustering</p>
+                    <p class="project-desc">Implemented Wasserstein-based regime detection with rolling windows and
+                        LSTM/GRU price modeling. Achieved 87% regime purity with clear cluster separation for adaptive
+                        strategy switching.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">Python · NumPy · scikit-learn</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">PURITY</span>
+                            <span class="meta-value highlight-green">87%</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">PERIOD</span>
+                            <span class="meta-value">JAN – MAR 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3: BTC Trading Bot -->
+                <div class="bento-card card-project private-project">
+                    <div class="private-bubble">
+                        Private code. Glad to discuss performance & mechanics!
+                    </div>
+                    <div class="project-tag-row">
+                        <span class="project-type type-algo">ALGO TRADING</span>
+                    </div>
+                    <div class="project-id">PRJ-005</div>
+                    <h3 class="project-title">BTC/ETH Trading Bot</h3>
+                    <p class="project-desc">Backtested trading bot using tick data → 1s OHLC. $2.01M USDT volume,
+                        realistic fee modeling, limit-order execution analysis.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">RETURN</span>
+                            <span class="meta-value highlight-green">+4.62%</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAV</span>
+                            <span class="meta-value">$5,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESEARCH GRID -->
+            <div id="research-grid" class="bento-grid research-grid tab-content" style="display: none;">
+                <!-- Project 4: EEG / Publication -->
+                <div class="bento-card card-project static-project">
+                    <div class="project-tag-row">
+                        <span class="project-type type-stats">RESEARCH</span>
+                        <span class="project-type type-ml">ML</span>
+                    </div>
+                    <div class="project-id">PUB-001</div>
+                    <h3 class="project-title">EEG Emotion Classification</h3>
+                    <p class="project-subtitle">IEEE CAI 2025 - Santa Clara, CA</p>
+                    <p class="project-desc">XGBoost-based emotion classification on DEAP dataset. Outperformed SVM, GBM,
+                        KNN, and ANN baselines.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">ACCURACY</span>
+                            <span class="meta-value highlight-green">86.9%</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">DOI</span>
+                            <span class="meta-value">10.1109/CAI64502</span>
+                        </div>
+                    </div>
+                    <div class="project-actions" style="display:flex; gap:10px; padding: 12px 16px;">
+                        <a href="https://ieeexplore.ieee.org/document/11050658" target="_blank" class="btn-outline"
+                            style="flex:1; justify-content:center; font-size:10px;">GO TO SITE ↗</a>
+                        <a href="https://drive.google.com/file/d/15GQbPBF35EnzOY3FZXQB5lCXe6qKgvM5/view?usp=sharing"
+                            target="_blank" class="btn-outline"
+                            style="flex:1; justify-content:center; font-size:10px;">VIEW PAPER ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="terminal-footer">
+            <div class="footer-inner">
+                <span class="footer-left">[SW] SHRAVANI WANJARI © 2026</span>
+                <span class="footer-right">SESSION ACTIVE &nbsp;|&nbsp; ALL SYSTEMS NOMINAL</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Skill Detail Modal -->
+    <div class="skill-modal-overlay" id="skill-modal-overlay">
+        <div class="skill-modal" id="skill-modal">
+            <!-- Dynamically populated by script.js -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
