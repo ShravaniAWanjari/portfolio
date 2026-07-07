@@ -1184,6 +1184,15 @@ body {
     grid-row: span 2;
 }
 
+.card-project-wide {
+    grid-column: span 2;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.card-project-wide:hover {
+    background: rgba(255, 140, 0, 0.05);
+}
+
 .project-tag-row {
     display: flex;
     gap: 6px;
