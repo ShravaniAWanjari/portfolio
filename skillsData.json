@@ -1,0 +1,161 @@
+{
+  "skills": {
+    "python": {
+      "name": "Python",
+      "projects": ["iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification"]
+    },
+    "cpp": {
+      "name": "C++",
+      "projects": ["hft-lite", "lob-engine"]
+    },
+    "java": {
+      "name": "JAVA",
+      "projects": []
+    },
+    "sql-nosql": {
+      "name": "SQL & NoSQL",
+      "projects": ["iris-platform", "quantnlp-suite"]
+    },
+    "pytorch": {
+      "name": "PyTorch",
+      "projects": ["quantnlp-suite", "eeg-classification"]
+    },
+    "hugging-face": {
+      "name": "Hugging Face",
+      "projects": ["quantnlp-suite"]
+    },
+    "xgboost": {
+      "name": "XGBoost",
+      "projects": ["eeg-classification"]
+    },
+    "scikit-learn": {
+      "name": "scikit-learn",
+      "projects": ["regime-detection", "eeg-classification"]
+    },
+    "rag": {
+      "name": "RAG",
+      "projects": ["quantnlp-suite", "iris-platform"]
+    },
+    "time-series-analysis": {
+      "name": "Time Series Analysis",
+      "projects": ["regime-detection", "btc-trading-bot"]
+    },
+    "nlp-transformers": {
+      "name": "NLP / Transformers",
+      "projects": ["quantnlp-suite"]
+    },
+    "lstm-gru": {
+      "name": "LSTM / GRU",
+      "projects": ["regime-detection"]
+    },
+    "fastapi": {
+      "name": "FastAPI",
+      "projects": ["quantnlp-suite"]
+    },
+    "rest-apis": {
+      "name": "REST APIs",
+      "projects": ["quantnlp-suite", "iris-platform"]
+    },
+    "multi-threading": {
+      "name": "Multi-threading",
+      "projects": ["hft-lite"]
+    },
+    "postgresql": {
+      "name": "PostgreSQL",
+      "projects": []
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "projects": []
+    },
+    "sqlite": {
+      "name": "SQLite",
+      "projects": ["iris-platform"]
+    },
+    "redis": {
+      "name": "Redis",
+      "projects": []
+    },
+    "git": {
+      "name": "Git",
+      "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification"]
+    },
+    "docker": {
+      "name": "Docker",
+      "projects": ["hft-lite", "quantnlp-suite"]
+    },
+    "kubernetes": {
+      "name": "Kubernetes",
+      "projects": []
+    },
+    "grafana": {
+      "name": "Grafana",
+      "projects": []
+    },
+    "prometheus": {
+      "name": "Prometheus",
+      "projects": []
+    },
+    "jenkins": {
+      "name": "Jenkins",
+      "projects": []
+    },
+    "ci-cd": {
+      "name": "CI/CD",
+      "projects": []
+    },
+    "html": {
+      "name": "HTML",
+      "projects": ["quantnlp-suite"]
+    },
+    "css": {
+      "name": "CSS",
+      "projects": ["quantnlp-suite"]
+    },
+    "react-18": {
+      "name": "React 18",
+      "projects": ["quantnlp-suite"]
+    },
+    "vite": {
+      "name": "Vite",
+      "projects": ["quantnlp-suite"]
+    }
+  },
+  "projects": {
+    "hft-lite": {
+      "title": "HFT-Lite: OHLCV Validation Engine",
+      "description": "Low-latency C++20 market data validation with SPSC queues",
+      "githubUrl": "https://github.com/ShravaniAWanjari/live-OHLCV-validation-system"
+    },
+    "lob-engine": {
+      "title": "Limit Order Book (LOB) Engine",
+      "description": "High-performance C++ order matching engine",
+      "githubUrl": "https://github.com/ShravaniAWanjari/exchange-order-matching-engine"
+    },
+    "iris-platform": {
+      "title": "Iris: Operational Intelligence Platform",
+      "description": "Deterministic LLM orchestration with SQLite & ChromaDB",
+      "githubUrl": "https://github.com/ShravaniAWanjari/futures-first-task"
+    },
+    "quantnlp-suite": {
+      "title": "Quant-NLP Research Suite",
+      "description": "Full-stack platform for sentiment-gated trading strategies",
+      "githubUrl": "https://github.com/ShravaniAWanjari/twitter-sentiment-for-market"
+    },
+    "regime-detection": {
+      "title": "Market Regime Detection",
+      "description": "Wasserstein K-Means clustering with LSTM/GRU modeling",
+      "githubUrl": "https://github.com/ShravaniAWanjari/Market-Regime-Detection_Wesserstein-Kmeans"
+    },
+    "btc-trading-bot": {
+      "title": "BTC/ETH Trading Bot",
+      "description": "Backtested algo trading bot — $2.01M USDT volume",
+      "githubUrl": null
+    },
+    "eeg-classification": {
+      "title": "EEG Emotion Classification",
+      "description": "XGBoost on DEAP dataset — 86.9% accuracy, IEEE CAI 2025",
+      "githubUrl": null
+    }
+  }
+}

@@ -206,4 +206,125 @@
         });
     }
 
+    // ===== SKILL DETAIL MODAL =====
+    var skillsData = null;
+    var modalOverlay = document.getElementById('skill-modal-overlay');
+    var modalContainer = document.getElementById('skill-modal');
+
+    // Fetch skills data
+    fetch('skillsData.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            skillsData = data;
+            initSkillChips();
+        })
+        .catch(function(err) {
+            console.warn('Could not load skillsData.json:', err);
+        });
+
+    function initSkillChips() {
+        document.querySelectorAll('.skill-chip[data-skill]').forEach(function(chip) {
+            chip.addEventListener('click', function() {
+                var skillId = this.getAttribute('data-skill');
+                openSkillModal(skillId);
+            });
+        });
+    }
+
+    function openSkillModal(skillId) {
+        if (!skillsData || !skillsData.skills[skillId]) return;
+
+        var skill = skillsData.skills[skillId];
+        var totalProjects = skill.projects.length;
+
+        // Map project IDs to actual project objects
+        var projects = skill.projects
+            .map(function(id) { return skillsData.projects[id]; })
+            .filter(Boolean);
+
+        // Build modal HTML
+        var html = '';
+
+        // Corner bracket elements (bottom)
+        html += '<div class="skill-modal-bottom-left"></div>';
+        html += '<div class="skill-modal-bottom-right"></div>';
+
+        // Header
+        html += '<div class="skill-modal-header">';
+        html += '  <span class="skill-modal-name">' + skill.name + '</span>';
+        html += '  <button class="skill-modal-close" id="skill-modal-close">&times;</button>';
+        html += '</div>';
+
+        // Dynamic project count
+        html += '<p class="skill-modal-count"><span class="check">✓</span> Used in ' + totalProjects + ' project' + (totalProjects !== 1 ? 's' : '') + '</p>';
+
+        // Divider
+        html += '<div class="skill-modal-divider"></div>';
+
+        // Project list
+        if (projects.length > 0) {
+            html += '<ul class="skill-modal-list">';
+            projects.forEach(function(project) {
+                html += '<li class="skill-modal-project">';
+                if (project.githubUrl) {
+                    html += '<a href="' + project.githubUrl + '" target="_blank" rel="noopener noreferrer" class="skill-modal-project-title">' + project.title + '</a>';
+                } else {
+                    html += '<span class="skill-modal-project-title no-link">' + project.title + '</span>';
+                }
+                html += '<p class="skill-modal-project-desc">' + project.description + '</p>';
+                html += '</li>';
+            });
+            html += '</ul>';
+        } else {
+            html += '<div class="skill-modal-empty">NO PORTFOLIO PROJECTS YET</div>';
+        }
+
+        // Footer
+        html += '<div class="skill-modal-footer">';
+        html += '  <a href="#research" class="skill-modal-view-all" id="skill-modal-view-projects">View Projects →</a>';
+        html += '</div>';
+
+        modalContainer.innerHTML = html;
+
+        // Show modal
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Close button
+        document.getElementById('skill-modal-close').addEventListener('click', closeSkillModal);
+
+        // "View Projects" link closes modal and scrolls
+        document.getElementById('skill-modal-view-projects').addEventListener('click', function(e) {
+            e.preventDefault();
+            closeSkillModal();
+            var target = document.querySelector('#research');
+            if (target) {
+                setTimeout(function() {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 350);
+            }
+        });
+    }
+
+    function closeSkillModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close on overlay click
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closeSkillModal();
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+            closeSkillModal();
+        }
+    });
+
 })();
