@@ -231,8 +231,9 @@ body.light-mode .header-badge,
 body.light-mode .badge-live,
 body.light-mode .badge-positive,
 body.light-mode .badge-negative {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
 }
 
 /* ===== RESET ===== */
@@ -257,7 +258,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.65;
 }
 
@@ -890,7 +891,7 @@ body {
 }
 
 .status-text {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text-secondary);
     letter-spacing: 1px;
@@ -941,7 +942,7 @@ body {
 }
 
 .currently-label {
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent);
@@ -949,7 +950,7 @@ body {
 
 .currently-value {
     font-family: var(--font-body);
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.5;
 }
@@ -1435,7 +1436,7 @@ body {
 
 .exp-bullets li {
     font-family: var(--font-body);
-    font-size: 14.5px;
+    font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.7;
     padding-left: 16px;
