@@ -51,11 +51,11 @@
 
 body.light-mode {
     /* Light Backgrounds */
-    --bg-primary: #e5e7eb;
-    --bg-secondary: #d1d5db;
-    --bg-card: #e5e7eb;
-    --bg-card-hover: #d1d5db;
-    --bg-elevated: #e5e7eb;
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #e5e7eb;
+    --bg-card: #f3f4f6;
+    --bg-card-hover: #e5e7eb;
+    --bg-elevated: #f3f4f6;
 
     /* Dark Grey Borders/Lines */
     --border: #222222;
@@ -99,7 +99,7 @@ body.light-mode .ticker-tape {
 }
 
 body.light-mode .top-bar {
-    background: rgba(229, 231, 235, 0.92);
+    background: rgba(243, 244, 246, 0.92);
 }
 
 body.light-mode .grain-overlay,
@@ -115,7 +115,7 @@ body.light-mode .btn-terminal {
 body.light-mode .btn-outline {
     box-shadow: 4px 4px 8px #c5c8cb, -4px -4px 8px #ffffff;
     border: 1px solid #222222;
-    background: #e5e7eb;
+    background: #f3f4f6;
 }
 
 body.light-mode .btn-outline:hover {
@@ -2095,7 +2095,7 @@ body.light-mode .skill-modal-overlay {
 }
 
 body.light-mode .skill-modal {
-    background: #e5e7eb;
+    background: #f3f4f6;
     border-color: #222222;
 }
 
