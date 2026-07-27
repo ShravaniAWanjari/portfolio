@@ -51,11 +51,11 @@
 
 body.light-mode {
     /* Light Backgrounds */
-    --bg-primary: #f0f2f5;
-    --bg-secondary: #e4e7ec;
-    --bg-card: #f0f2f5;
-    --bg-card-hover: #e8eaed;
-    --bg-elevated: #f0f2f5;
+    --bg-primary: #e5e7eb;
+    --bg-secondary: #d1d5db;
+    --bg-card: #e5e7eb;
+    --bg-card-hover: #d1d5db;
+    --bg-elevated: #e5e7eb;
 
     /* Pure Black Borders/Lines */
     --border: #000000;
@@ -99,7 +99,7 @@ body.light-mode .ticker-tape {
 }
 
 body.light-mode .top-bar {
-    background: rgba(240, 242, 245, 0.92);
+    background: rgba(229, 231, 235, 0.92);
 }
 
 body.light-mode .grain-overlay,
@@ -115,7 +115,7 @@ body.light-mode .btn-terminal {
 body.light-mode .btn-outline {
     box-shadow: 4px 4px 8px #c5c8cb, -4px -4px 8px #ffffff;
     border: 1px solid #000000;
-    background: #f0f2f5;
+    background: #e5e7eb;
 }
 
 body.light-mode .btn-outline:hover {
@@ -2095,7 +2095,7 @@ body.light-mode .skill-modal-overlay {
 }
 
 body.light-mode .skill-modal {
-    background: #ffffff;
+    background: #e5e7eb;
     border-color: #000000;
 }
 
@@ -2166,7 +2166,7 @@ body.light-mode .skill-modal-list::-webkit-scrollbar-thumb {
 
 /* Light mode hover effect for View All Projects */
 body.light-mode .card-project-wide:hover {
-    background: rgba(0, 0, 0, 0.85);
+    background: #000000;
     color: #ffffff;
 }
 
@@ -2205,11 +2205,11 @@ body.light-mode .card-project-wide:hover svg {
     transition: all 0.2s ease;
 }
 
-.tab-btn:hover {
+.tab-btn:not(.active):hover {
     background: rgba(255, 140, 0, 0.1);
 }
 
-body.light-mode .tab-btn:hover {
+body.light-mode .tab-btn:not(.active):hover {
     background: rgba(0, 0, 0, 0.04);
 }
 
