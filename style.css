@@ -1688,6 +1688,14 @@ body {
     transform: translateX(3px);
 }
 
+.view-all-text {
+    font-family: var(--font-heading);
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
 /* ===== FOOTER ===== */
 .terminal-footer {
     padding: 20px 0;
@@ -1781,6 +1789,28 @@ body {
         display: none;
     }
 
+    .top-bar-inner {
+        height: 44px;
+        padding: 0;
+        align-items: center;
+    }
+
+    .top-bar-left, .top-bar-right {
+        gap: 6px;
+    }
+    
+    .top-bar-right {
+        flex-wrap: nowrap;
+    }
+
+    .date-display {
+        display: none;
+    }
+
+    .view-all-text {
+        font-size: 32px !important;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
     }
@@ -1812,28 +1842,15 @@ body {
 
     .research-grid,
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 
     .card-project-lg,
     .card-project-tall,
+    .card-project-wide,
     .card-skill-wide {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-
-    .identity-actions {
-        flex-direction: column;
-    }
-}   .card-skill-wide {
-        grid-column: span 1;
-        grid-row: span 1;
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
     }
 
     .footer-inner {
