@@ -1128,7 +1128,8 @@ body {
     border-top-color: var(--border-subtle);
 }
 
-.static-project::after {
+.static-project::after,
+.card-project-wide::after {
     display: none !important;
 }
 
@@ -2206,6 +2207,10 @@ body.light-mode .card-project-wide:hover svg {
 
 .tab-btn:hover {
     background: rgba(255, 140, 0, 0.1);
+}
+
+body.light-mode .tab-btn:hover {
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .tab-btn.active {
