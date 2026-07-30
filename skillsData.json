@@ -54,7 +54,7 @@
     },
     "fastapi": {
       "name": "FastAPI",
-      "projects": ["quantnlp-suite", "noct-dispatch"]
+      "projects": ["quantnlp-suite", "noct-dispatch", "brain-tumor-cicd"]
     },
     "spring-boot": {
       "name": "Spring Boot",
@@ -98,31 +98,31 @@
     },
     "git": {
       "name": "Git",
-      "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification", "ping", "noct-dispatch"]
+      "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification", "ping", "noct-dispatch", "brain-tumor-cicd"]
     },
     "docker": {
       "name": "Docker",
-      "projects": ["hft-lite", "quantnlp-suite"]
+      "projects": ["hft-lite", "quantnlp-suite", "brain-tumor-cicd"]
     },
     "kubernetes": {
       "name": "Kubernetes",
-      "projects": []
+      "projects": ["brain-tumor-cicd"]
     },
     "grafana": {
       "name": "Grafana",
-      "projects": []
+      "projects": ["brain-tumor-cicd"]
     },
     "prometheus": {
       "name": "Prometheus",
-      "projects": []
+      "projects": ["brain-tumor-cicd"]
     },
     "jenkins": {
       "name": "Jenkins",
-      "projects": []
+      "projects": ["brain-tumor-cicd"]
     },
     "ci-cd": {
       "name": "CI/CD",
-      "projects": []
+      "projects": ["brain-tumor-cicd"]
     },
     "html": {
       "name": "HTML",
@@ -186,6 +186,11 @@
       "title": "NOCT Creative Dispatch",
       "description": "AI video generation workflow prototype featuring spatially aware prompt scripts.",
       "githubUrl": "https://github.com/ShravaniAWanjari/vid-generation-workflow"
+    },
+    "brain-tumor-cicd": {
+      "title": "Brain Tumor Classification CI/CD",
+      "description": "Automated deployment platform using Jenkins, Ansible, Docker, and Prometheus/Grafana.",
+      "githubUrl": "https://github.com/ShravaniAWanjari/Brn-tmr-distributed-deployment-workflow"
     }
   }
 }
