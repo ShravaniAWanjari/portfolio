@@ -88,6 +88,14 @@
       "name": "RabbitMQ",
       "projects": ["ping"]
     },
+    "caffeine": {
+      "name": "Caffeine Cache",
+      "projects": ["ping"]
+    },
+    "swagger": {
+      "name": "Swagger / OpenAPI",
+      "projects": ["ping"]
+    },
     "git": {
       "name": "Git",
       "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification", "ping", "noct-dispatch"]
