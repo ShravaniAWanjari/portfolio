@@ -213,6 +213,11 @@ body.light-mode .card-project::after {
     background: rgba(0, 0, 0, 0.9);
 }
 
+body.light-mode .card-project {
+    border: 1px solid #222222;
+    border-top: 2px solid #222222;
+}
+
 body.light-mode .card-project:hover {
     box-shadow: 8px 8px 16px #c5c8cb, -8px -8px 16px #ffffff;
 }
