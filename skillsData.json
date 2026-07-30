@@ -48,9 +48,17 @@
       "name": "LSTM / GRU",
       "projects": ["regime-detection"]
     },
+    "gemini": {
+      "name": "Gemini VLM",
+      "projects": ["noct-dispatch"]
+    },
     "fastapi": {
       "name": "FastAPI",
       "projects": ["quantnlp-suite", "noct-dispatch"]
+    },
+    "spring-boot": {
+      "name": "Spring Boot",
+      "projects": ["ping"]
     },
     "rest-apis": {
       "name": "REST APIs",
@@ -74,6 +82,10 @@
     },
     "redis": {
       "name": "Redis",
+      "projects": ["ping"]
+    },
+    "rabbitmq": {
+      "name": "RabbitMQ",
       "projects": ["ping"]
     },
     "git": {
