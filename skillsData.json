@@ -2,7 +2,7 @@
   "skills": {
     "python": {
       "name": "Python",
-      "projects": ["iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification"]
+      "projects": ["iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification", "noct-dispatch"]
     },
     "cpp": {
       "name": "C++",
@@ -10,11 +10,11 @@
     },
     "java": {
       "name": "JAVA",
-      "projects": []
+      "projects": ["ping"]
     },
     "sql-nosql": {
       "name": "SQL & NoSQL",
-      "projects": ["iris-platform", "quantnlp-suite"]
+      "projects": ["iris-platform", "quantnlp-suite", "ping"]
     },
     "pytorch": {
       "name": "PyTorch",
@@ -50,11 +50,11 @@
     },
     "fastapi": {
       "name": "FastAPI",
-      "projects": ["quantnlp-suite"]
+      "projects": ["quantnlp-suite", "noct-dispatch"]
     },
     "rest-apis": {
       "name": "REST APIs",
-      "projects": ["quantnlp-suite", "iris-platform"]
+      "projects": ["quantnlp-suite", "iris-platform", "ping", "noct-dispatch"]
     },
     "multi-threading": {
       "name": "Multi-threading",
@@ -62,7 +62,7 @@
     },
     "postgresql": {
       "name": "PostgreSQL",
-      "projects": []
+      "projects": ["ping"]
     },
     "mongodb": {
       "name": "MongoDB",
@@ -74,11 +74,11 @@
     },
     "redis": {
       "name": "Redis",
-      "projects": []
+      "projects": ["ping"]
     },
     "git": {
       "name": "Git",
-      "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification"]
+      "projects": ["hft-lite", "lob-engine", "iris-platform", "quantnlp-suite", "regime-detection", "btc-trading-bot", "eeg-classification", "ping", "noct-dispatch"]
     },
     "docker": {
       "name": "Docker",
@@ -106,19 +106,19 @@
     },
     "html": {
       "name": "HTML",
-      "projects": ["quantnlp-suite"]
+      "projects": ["quantnlp-suite", "noct-dispatch"]
     },
     "css": {
       "name": "CSS",
-      "projects": ["quantnlp-suite"]
+      "projects": ["quantnlp-suite", "noct-dispatch"]
     },
     "react-18": {
       "name": "React 18",
-      "projects": ["quantnlp-suite"]
+      "projects": ["quantnlp-suite", "noct-dispatch"]
     },
     "vite": {
       "name": "Vite",
-      "projects": ["quantnlp-suite"]
+      "projects": ["quantnlp-suite", "noct-dispatch"]
     }
   },
   "projects": {
@@ -156,6 +156,16 @@
       "title": "EEG Emotion Classification",
       "description": "XGBoost on DEAP dataset — 86.9% accuracy, IEEE CAI 2025",
       "githubUrl": null
+    },
+    "ping": {
+      "title": "Ping",
+      "description": "Event-driven, multi-tenant notification platform built with Spring Boot.",
+      "githubUrl": "https://github.com/ShravaniAWanjari/Ping"
+    },
+    "noct-dispatch": {
+      "title": "NOCT Creative Dispatch",
+      "description": "AI video generation workflow prototype featuring spatially aware prompt scripts.",
+      "githubUrl": "https://github.com/ShravaniAWanjari/vid-generation-workflow"
     }
   }
 }
