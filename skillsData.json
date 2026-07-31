@@ -16,6 +16,11 @@
       "name": "SQL & NoSQL",
       "projects": ["iris-platform", "quantnlp-suite", "ping"]
     },
+    "TypeScript": {
+      "name": "TypeScript",
+      "projects": ["iris-platform"]
+    },
+
     "pytorch": {
       "name": "PyTorch",
       "projects": ["quantnlp-suite", "eeg-classification"]
@@ -175,7 +180,7 @@
     "eeg-classification": {
       "title": "EEG Emotion Classification",
       "description": "XGBoost on DEAP dataset — 86.9% accuracy, IEEE CAI 2025",
-      "githubUrl": null
+      "githubUrl": "https://github.com/ShravaniAWanjari/Effects-of-music-on-human-brain-using-DEAP-Dataset"
     },
     "ping": {
       "title": "Ping",
