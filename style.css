@@ -908,8 +908,8 @@ body {
     margin-top: 1px;
 }
 
-/* Currently card */
-.card-currently {
+/* Currently card / Github Activity */
+.card-github-activity {
     grid-column: 5 / 13;
     grid-row: 3 / 4;
 }
@@ -1753,7 +1753,7 @@ body {
         grid-row: 3 / 4;
     }
 
-    .card-currently {
+    .card-github-activity {
         grid-column: 4 / 7;
         grid-row: 3 / 4;
     }
@@ -1824,7 +1824,7 @@ body {
     .card-activity-log,
     .card-code-snapshot,
     .card-status,
-    .card-currently {
+    .card-github-activity {
         grid-column: 1 / -1;
         grid-row: auto;
     }
