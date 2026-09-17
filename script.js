@@ -206,6 +206,11 @@
         });
     }
 
+    // ===== GITHUB CALENDAR =====
+    if (typeof GitHubCalendar !== 'undefined' && document.getElementById('github-graph')) {
+        GitHubCalendar("#github-graph", "ShravaniAWanjari", { responsive: true, tooltips: true });
+    }
+
     // ===== SKILL DETAIL MODAL =====
     var skillsData = null;
     var modalOverlay = document.getElementById('skill-modal-overlay');

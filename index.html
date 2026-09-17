@@ -13,6 +13,9 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- GitHub Calendar Library -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 </head>
 
 <body>
@@ -191,33 +194,15 @@
                     </div>
                 </div>
 
-                <!-- Currently -->
-                <div class="bento-card card-currently">
+                <!-- GitHub Activity -->
+                <div class="bento-card card-github-activity">
                     <div class="card-header-bar">
-                        <span class="header-label">CURRENTLY</span>
+                        <span class="header-label">GITHUB ACTIVITY</span>
+                        <span class="header-badge badge-live">REALTIME</span>
                     </div>
-                    <div class="currently-list">
-                        <div class="currently-item">
-                            <span class="currently-icon">🔬</span>
-                            <div class="currently-content">
-                                <span class="currently-label">RESEARCHING</span>
-                                <span class="currently-value">Optimal execution & market microstructure</span>
-                            </div>
-                        </div>
-                        <div class="currently-item">
-                            <span class="currently-icon">📖</span>
-                            <div class="currently-content">
-                                <span class="currently-label">READING</span>
-                                <span class="currently-value">What Every Programmer Should Know About Memory -
-By Ulrich Drepper</span>
-                            </div>
-                        </div>
-                        <div class="currently-item">
-                            <span class="currently-icon">⚡</span>
-                            <div class="currently-content">
-                                <span class="currently-label">BUILDING</span>
-                                <span class="currently-value">Low-latency order book reconstruction engine</span>
-                            </div>
+                    <div class="github-calendar-container">
+                        <div class="calendar" id="github-graph">
+                            Loading activity...
                         </div>
                     </div>
                 </div>
@@ -849,6 +834,7 @@ By Ulrich Drepper</span>
         </div>
     </div>
 
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script src="script.js"></script>
 </body>
 

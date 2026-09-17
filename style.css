@@ -2251,3 +2251,46 @@ body.light-mode .tab-btn.active {
 .tab-content.active {
     display: grid; /* Assuming bento-grid */
 }
+
+/* ===== GITHUB CALENDAR ===== */
+.github-calendar-container {
+    padding: 20px;
+    font-family: var(--font-mono);
+    overflow: hidden;
+}
+
+.github-calendar-container .calendar {
+    min-height: 150px;
+    border: none;
+    margin: 0;
+}
+
+.github-calendar-container .calendar.github-calendar {
+    border: none;
+    padding: 0;
+}
+
+/* Text elements inside the calendar */
+.github-calendar-container .calendar text.wday,
+.github-calendar-container .calendar text.month {
+    fill: var(--text-secondary);
+    font-size: 10px;
+}
+.github-calendar-container .calendar .text-muted, 
+.github-calendar-container .calendar .text-gray {
+    color: var(--text-tertiary) !important;
+}
+
+/* Dark mode (default): Shades of orange */
+.github-calendar-container .calendar .ContributionCalendar-day[data-level="0"] { fill: #1c1c1c; background-color: #1c1c1c; } /* Lighter grey than --bg-card */
+.github-calendar-container .calendar .ContributionCalendar-day[data-level="1"] { fill: #4d2a00; background-color: #4d2a00; }
+.github-calendar-container .calendar .ContributionCalendar-day[data-level="2"] { fill: #8c4c00; background-color: #8c4c00; }
+.github-calendar-container .calendar .ContributionCalendar-day[data-level="3"] { fill: #cc7000; background-color: #cc7000; }
+.github-calendar-container .calendar .ContributionCalendar-day[data-level="4"] { fill: #ff8c00; background-color: #ff8c00; }
+
+/* Light mode: Shades of black */
+body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="0"] { fill: #e5e7eb; background-color: #e5e7eb; }
+body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="1"] { fill: #9ca3af; background-color: #9ca3af; }
+body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="2"] { fill: #6b7280; background-color: #6b7280; }
+body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="3"] { fill: #374151; background-color: #374151; }
+body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="4"] { fill: #111827; background-color: #111827; }
