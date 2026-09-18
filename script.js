@@ -242,6 +242,11 @@
                         });
                     }
                 });
+                
+                // Fix overlapping day names by modifying dx attribute directly
+                document.querySelectorAll('.github-calendar-container text.wday').forEach(function(el) {
+                    el.setAttribute('dx', '-25');
+                });
             });
     }
 

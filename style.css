@@ -38,8 +38,8 @@
     --purple: #b388ff;
 
     /* Sizing */
-    --container-max: 1240px;
-    --gap: 10px;
+    --container-max: 1222px; /* Scales to ~1100px visually with 0.9 zoom */
+    --gap: 11px; /* Scales to ~10px visually with 0.9 zoom */
     --radius: 6px;
     --radius-sm: 4px;
 
@@ -265,6 +265,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-size: 20px;
     line-height: 1.65;
+    zoom: 0.9;
 }
 
 /* ===== GRAIN ===== */
@@ -2276,6 +2277,10 @@ body.light-mode .tab-btn.active {
     fill: var(--text-secondary);
     font-size: 10px;
 }
+
+.github-calendar-container .calendar text.wday {
+    transform: translateX(-25px) !important;
+}
 .github-calendar-container .calendar .text-muted, 
 .github-calendar-container .calendar .text-gray {
     color: var(--text-tertiary) !important;
@@ -2293,6 +2298,22 @@ body.light-mode .tab-btn.active {
 .github-calendar-container .calendar .contrib-column,
 .github-calendar-container a[href*="year-link"],
 .github-calendar-container .calendar h2 {
+    display: none !important;
+}
+
+/* Hide scrollbars if they appear due to 1px overflow */
+.github-calendar-container,
+.github-calendar-container .calendar,
+.github-calendar-container .js-calendar-graph,
+.github-calendar-container .width-full {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: hidden !important;
+}
+.github-calendar-container::-webkit-scrollbar,
+.github-calendar-container .calendar::-webkit-scrollbar,
+.github-calendar-container .js-calendar-graph::-webkit-scrollbar,
+.github-calendar-container .width-full::-webkit-scrollbar {
     display: none !important;
 }
 
