@@ -2291,8 +2291,23 @@ body.light-mode .tab-btn.active {
 /* Hide screen-reader only elements and broken stats */
 .github-calendar-container .calendar .sr-only,
 .github-calendar-container .calendar .contrib-column,
-.github-calendar-container .calendar .contrib-footer {
+.github-calendar-container .calendar .contrib-footer,
+.github-calendar-container a[href*="year-link"],
+.github-calendar-container .calendar h2 {
     display: none !important;
+}
+
+/* Interactive days */
+.github-calendar-container .calendar .ContributionCalendar-day {
+    transition: transform 0.15s ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.github-calendar-container .calendar .ContributionCalendar-day:hover {
+    transform: scale(1.4);
+    z-index: 10;
+    position: relative;
+    border-radius: 2px;
 }
 
 /* Light mode: Shades of black */
