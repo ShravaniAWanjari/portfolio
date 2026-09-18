@@ -208,7 +208,41 @@
 
     // ===== GITHUB CALENDAR =====
     if (typeof GitHubCalendar !== 'undefined' && document.getElementById('github-graph')) {
-        GitHubCalendar("#github-graph", "ShravaniAWanjari", { responsive: true, tooltips: true, global_stats: false });
+        GitHubCalendar("#github-graph", "ShravaniAWanjari", { responsive: true, tooltips: true, global_stats: false })
+            .then(function() {
+                // Create custom tooltip element
+                var customTooltip = document.createElement('div');
+                customTooltip.id = 'github-custom-tooltip';
+                document.body.appendChild(customTooltip);
+
+                // Extract tooltip text and set up hover events
+                document.querySelectorAll('.ContributionCalendar-day').forEach(function(day) {
+                    var id = day.id;
+                    var tooltipText = "";
+                    if (id) {
+                        var tooltipEl = document.querySelector('tool-tip[for="' + id + '"]');
+                        if (tooltipEl) {
+                            tooltipText = tooltipEl.textContent.trim();
+                        }
+                    }
+
+                    if (tooltipText) {
+                        day.addEventListener('mouseenter', function(e) {
+                            customTooltip.textContent = tooltipText;
+                            customTooltip.classList.add('visible');
+                            
+                            // Position the tooltip above the block
+                            var rect = day.getBoundingClientRect();
+                            customTooltip.style.left = (rect.left + window.scrollX + (rect.width / 2)) + 'px';
+                            customTooltip.style.top = (rect.top + window.scrollY - 8) + 'px';
+                        });
+
+                        day.addEventListener('mouseleave', function() {
+                            customTooltip.classList.remove('visible');
+                        });
+                    }
+                });
+            });
     }
 
     // ===== SKILL DETAIL MODAL =====
