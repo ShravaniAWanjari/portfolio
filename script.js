@@ -208,7 +208,7 @@
 
     // ===== GITHUB CALENDAR =====
     if (typeof GitHubCalendar !== 'undefined' && document.getElementById('github-graph')) {
-        GitHubCalendar("#github-graph", "ShravaniAWanjari", { responsive: true, tooltips: true });
+        GitHubCalendar("#github-graph", "ShravaniAWanjari", { responsive: true, tooltips: true, global_stats: false });
     }
 
     // ===== SKILL DETAIL MODAL =====

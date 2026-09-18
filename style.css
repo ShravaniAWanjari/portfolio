@@ -2288,6 +2288,13 @@ body.light-mode .tab-btn.active {
 .github-calendar-container .calendar .ContributionCalendar-day[data-level="3"] { fill: #cc7000; background-color: #cc7000; }
 .github-calendar-container .calendar .ContributionCalendar-day[data-level="4"] { fill: #ff8c00; background-color: #ff8c00; }
 
+/* Hide screen-reader only elements and broken stats */
+.github-calendar-container .calendar .sr-only,
+.github-calendar-container .calendar .contrib-column,
+.github-calendar-container .calendar .contrib-footer {
+    display: none !important;
+}
+
 /* Light mode: Shades of black */
 body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="0"] { fill: #e5e7eb; background-color: #e5e7eb; }
 body.light-mode .github-calendar-container .calendar .ContributionCalendar-day[data-level="1"] { fill: #9ca3af; background-color: #9ca3af; }
